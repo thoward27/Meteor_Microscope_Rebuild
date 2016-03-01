@@ -1,1 +1,0 @@
-{"version":3,"sources":["meteor://💻app/client/helpers/config.js"],"names":[],"mappings":";;;;;;;;AAAA,QAAQ,CAAC,EAAE,CAAC,MAAM,CAAC;AACjB,sBAAoB,EAAE,eAAe;CACtC,CAAC,CAAC,sE","file":"/client/helpers/config.js","sourcesContent":["Accounts.ui.config({\r\n  passwordSignupFields: 'USERNAME_ONLY'\r\n});\r\n"]}
