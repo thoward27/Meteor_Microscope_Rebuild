@@ -1,0 +1,1 @@
+{"version":3,"sources":["meteor://💻app/server/publications.js"],"names":[],"mappings":";;;;;;;;AAAA,MAAM,CAAC,OAAO,CAAC,OAAO,EAAE,YAAW;AACjC,SAAO,KAAK,CAAC,IAAI,EAAE,CAAC;CACrB,CAAC,CAAC,sE","file":"/server/publications.js","sourcesContent":["Meteor.publish('posts', function() {\r\n  return Posts.find();\r\n});\r\n"]}

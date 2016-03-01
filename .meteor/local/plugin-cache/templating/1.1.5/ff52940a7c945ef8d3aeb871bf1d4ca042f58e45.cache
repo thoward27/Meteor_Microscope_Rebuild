@@ -1,0 +1,1 @@
+{"head":"","body":"","js":"\nTemplate.__checkName(\"notFound\");\nTemplate[\"notFound\"] = new Template(\"Template.notFound\", (function() {\n  var view = this;\n  return HTML.Raw('<div class=\"not-found page jumbotron\">\\n    <h2></h2>\\n    <p>Sorry, we couldn\\'t find the page you were looking for :(</p>\\n  </div>');\n}));\n","bodyAttrs":{}}
