@@ -4,4 +4,8 @@ Template.postItem.helpers({
     a.href = this.url;
     return a.hostname;
   },
+  //check for ownership
+  ownPost: function() {
+    return this.userId === Meteor.userId();
+  }
 });
