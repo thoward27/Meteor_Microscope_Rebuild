@@ -24,7 +24,7 @@ Template.postSubmit.events({
       url: $(e.target).find('[name=url]').val(),
       title: $(e.target).find('[name=title]').val()
     };
-    
+
     //create errors var, fill it with validatePost function, display errors if title or url through session set
     var errors = validatePost(post);
     if (errors.title || errors.url)
@@ -34,10 +34,10 @@ Template.postSubmit.events({
     Meteor.call('postInsert', post, function(error, result) {
       //displays error + aborts
       if (error)
-        return throwError(error.reason);
+        return Errors.throw(error.reason);
 
       if (result.postExists)
-        throwError('Somebody beat you to that one, sending you to the same post now');
+        Errors.throw('Somebody beat you to that one, sending you to the same post now');
 
       Router.go('postPage', {_id: result._id});
     });
