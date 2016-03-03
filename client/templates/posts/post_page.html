@@ -1,5 +1,37 @@
 <template name="postPage">
   <div class="post-page page">
     {{> postItem}}
+
+    <ul class="comments">
+      {{#each comments}}
+        {{> commentItem}}
+      {{/each}}
+    </ul>
+
+    {{#if currentUser}}
+      {{> commentSubmit}}
+    {{/if}}
   </div>
+</template>
+
+<template name="commentItem">
+  <li>
+    <h4><span class="author">{{author}}</span><span class="date"> on {{submittedText}}</span></h4>
+    <p>
+      {{body}}
+    </p>
+  </li>
+</template>
+
+<template name="commentSubmit">
+  <form action="" class="comment-form form" name="comment">
+    <div class="form-group" {{errorClass "body"}}>
+      <div class="controls">
+        <label for="body">Make a comment:</label>
+        <textarea name="body" id="body" rows="3" class="form-control"></textarea>
+        <span class="help-block">{{errorMessage 'body'}}</span>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Add comment</button>
+  </form>
 </template>
