@@ -52,4 +52,15 @@ if (Posts.find().count() === 0) {
     url: 'https://www.facebook.com',
     submitted: new Date(now - 12 * 3600 * 1000)
   });
+
+  for (var i = 0; i < 10; i++) {
+    Posts.insert({
+      title: 'Le post' + i,
+      author: taylor.profile.name,
+      userId: taylor._id,
+      url: 'http://google.com/?q=test-' + i,
+      submitted: new Date(now - i * 3600 * 1000),
+      commentsCount: 0
+    });
+  }
 }
