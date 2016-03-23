@@ -20,7 +20,9 @@ if (Posts.find().count() === 0) {
     author: tom.profile.name,
     url: 'http://www.google.com',
     submitted: new Date(now - 7 * 3600 * 1000),
-    commentsCount: 2
+    commentsCount: 2,
+    upVoters: [],
+    votes: 0
   });
   Comments.insert({
     postId: googleId,
@@ -42,7 +44,10 @@ if (Posts.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     url: 'http://meteor.com',
-    submitted: new Date(now - 10 * 3600 * 1000)
+    submitted: new Date(now - 10 * 3600 * 1000),
+    commentsCount: 0,
+    upVoters: [],
+    votes: 0
   });
 
   Posts.insert({
@@ -50,7 +55,10 @@ if (Posts.find().count() === 0) {
     userId: taylor._id,
     author: taylor.profile.name,
     url: 'https://www.facebook.com',
-    submitted: new Date(now - 12 * 3600 * 1000)
+    submitted: new Date(now - 12 * 3600 * 1000),
+    commentsCount: 0,
+    upVoters: [],
+    votes: 0
   });
 
   for (var i = 0; i < 10; i++) {
@@ -60,7 +68,9 @@ if (Posts.find().count() === 0) {
       userId: taylor._id,
       url: 'http://google.com/?q=test-' + i,
       submitted: new Date(now - i * 3600 * 1000),
-      commentsCount: 0
+      commentsCount: 0,
+      upVoters: [],
+      votes: 0
     });
   }
 }
